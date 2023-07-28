@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="custome-list">
+                <div class="card text-center">
+                    <div class="card-header">
+                    <h3><%= title %></h3>
+                    </div>
+                    <div class="card-body">
+                    
+                        <form class="row row-cols-lg-auto g-3 align-items-center" action="/createCustomeList" method="POST">
+                            <div class="col-12">
+                              <div class="form-check">
+                                <label class="form-check-label" for="inlineFormCheck">Name : </label>
+                                <input class="form-input" type="text" id="newListName" name="newListName">
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <button type="submit" class="btn btn-outline-primary btn-sm">➡️</button>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        <p>Best way to finish task , be consistent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+
+
+<%- include("partials/footer") %>

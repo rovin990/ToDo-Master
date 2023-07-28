@@ -1,0 +1,56 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="heading-container">
+                
+                    <h1 class="heading"><%= listTitle %></h1>
+            </div>
+            
+            
+            <table class="table ">
+            <% 
+                if(locals.newListItems){
+                for(var i=0;i<newListItems.length;i++){
+                    var name =newListItems[i].name %>
+                <tbody>
+
+                <tr >
+                    <td>
+                        <form id="checkForm<%= newListItems[i]._id %>"action="/deleteTodo" method="post">
+                            <input id="checkid"  type="checkbox" onclick="document. getElementById('checkForm<%= newListItems[i]._id %>'). submit()"/>
+                            <input type="hidden" name="listTitle" value="<%= listTitle %>">
+                            <input type="hidden" name="checkedId" value="<%= newListItems[i]._id %>">
+                        </form>
+                     </td>
+                    <td><p class="items" id="item<%= i %>"><%= newListItems[i].name  %></p></td>
+                </tr>
+                <% }
+             } %>
+
+             
+                <tr >
+                    <form class="form-inline d-flex"  method="POST" action="/">
+                        <td>
+                        <input type="text" name="taskType">
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-outline-primary mb-2" name="listTitle" value="<%= listTitle %>">new task</button>
+                        </td>
+                        
+                    </form>
+                    
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+
+
+
+
+<%- include("partials/footer") %>
