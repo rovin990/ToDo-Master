@@ -16,7 +16,7 @@ const date1 = d.getDate();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://0.0.0.0:27017/todolistDB");
+mongoose.connect("mongodb+srv://rovinsingh990:kick1996@cn-1.vaamzyl.mongodb.net/todolistDB");
 const itemsSchema = mongoose.Schema({
     name:String
 });
